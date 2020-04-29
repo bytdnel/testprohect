@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row pt-4 pb-2">
+        <h1>Cash in</h1>
+    </div>
+</div>
+<app-dash-nav></app-dash-nav>
+
+<div class="container">
+  <nb-card>
+    <nb-card-body>
+      <nb-stepper orientation="horizontal" disableStepNavigation>
+        <nb-step [label]="labelOne">
+          <ng-template #labelOne>Шаг первый</ng-template>
+          <h4>Выбери валюту</h4>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setCurrency('RUB')">RUB</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setCurrency('USD')">USD</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setCurrency('EUR')">EUR</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setCurrency('YAH')">YAH</button></div>
+            </div>
+          </div>
+          <!-- <button class="prev-button" nbButton disabled nbStepperNext>prev</button> -->
+        </nb-step>
+        <nb-step [label]="labelTwo">
+          <ng-template #labelTwo>Шаг второй</ng-template>
+          <h3>Выбери способ оплаты</h3>
+          
+          <div class="container general" *ngIf="currency==='RUB'" >
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-1')">RUB-WAY-1</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-2')">RUB-WAY-2</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-3')">RUB-WAY-3</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-4')">RUB-WAY-4</button></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-5')">RUB-WAY-5</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-6')">RUB-WAY-6</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-7')">RUB-WAY-7</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('RUB-WAY-8')">RUB-WAY-8</button></div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='USD'">
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-1')">USD-WAY-1</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-2')">USD-WAY-2</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-3')">USD-WAY-3</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-4')">USD-WAY-4</button></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-5')">USD-WAY-5</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-6')">USD-WAY-6</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-7')">USD-WAY-7</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('USD-WAY-8')">USD-WAY-8</button></div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='EUR'">
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-1')">EUR-WAY-1</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-2')">EUR-WAY-2</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-3')">EUR-WAY-3</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-4')">EUR-WAY-4</button></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-5')">EUR-WAY-5</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-6')">EUR-WAY-6</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-7')">EUR-WAY-7</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('EUR-WAY-8')">EUR-WAY-8</button></div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='YAH'">
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-1')">YAH-WAY-1</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-2')">YAH-WAY-2</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-3')">YAH-WAY-3</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-4')">YAH-WAY-4</button></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-5')">YAH-WAY-5</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-6')">YAH-WAY-6</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-7')">YAH-WAY-7</button></div>
+              <div class="col-md-3"><button nbButton nbStepperNext (click)="setWalletType('YAH-WAY-8')">YAH-WAY-8</button></div>
+            </div>
+          </div>
+
+          <button class="prev-button" nbButton nbStepperPrevious>Назад</button>
+          <!-- <button class="next-button" nbButton nbStepperNext>next</button> -->
+        </nb-step>
+        <nb-step [label]="labelThree">
+        <ng-template #labelThree>Шаг третий</ng-template>
+          <h4>Введи сумму</h4>
+
+          <div class="container" *ngIf="currency==='RUB'">
+            <div class="row">
+              <div class="col-md-6">
+                <p>Минимальное значение 500 RUB</p>
+                <input type="text" min="500" (keyup)="onKey($event)" nbInput>
+                <div class="col-md-6" style="color: red">{{ error }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='USD'">
+            <div class="row">
+              <div class="col-md-6">
+                <p>Минимальное значение 50 USD</p>
+                <input type="text" min="50" (keyup)="onKey($event)" nbInput>
+                <div class="col-md-6" style="color: red">{{ error }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='EUR'">
+            <div class="row">
+              <div class="col-md-6">
+                <p>Минимальное значение 40 EUR</p>
+                <input type="text" min="40" (keyup)="onKey($event)" nbInput>
+                <div class="col-md-6" style="color: red">{{ error }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" *ngIf="currency==='YAH'">
+            <div class="row">
+              <div class="col-md-6">
+                <p>Минимальное значение 150 YAH</p>
+                <input type="text" min="150" (keyup)="onKey($event)" required nbInput>
+                <div class="col-md-6" style="color: red">{{ error }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><button class="prev-button" nbButton nbStepperPrevious>Назад</button></div>
+            <div class="col-md-8"></div>
+            <div class="col-md-2"><button class="next-button" nbButton nbStepperNext (click)="setDefaults()">Оплатить</button></div>
+          </div>
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card>
+</div>

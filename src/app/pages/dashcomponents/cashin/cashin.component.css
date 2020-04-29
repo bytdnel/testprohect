@@ -1,0 +1,29 @@
+button {
+	margin-top: 50px !important;
+	height: 40px;
+	width: 120px;
+	font-size: 1rem !important
+}
+
+nb-card {
+	height: 500px;
+}
+nb-card-body {
+	height: 500px !important;
+}
+nb-stepper {
+	/*border: 2px solid black*/
+}
+
+nb-step {
+	/*border: 2px solid black;*/
+}
+ng-template {
+	border: 2px solid black;
+
+}
+
+h3 {
+	margin-top: 50px;
+	font-style: 1.5rem !important;
+}
